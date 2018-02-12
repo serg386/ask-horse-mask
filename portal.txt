@@ -1,5 +1,5 @@
 portal
--сбор денег
+===========================collect money================================
 
 \collect\
 \collect\{collectId}\payment\{paymentId}
@@ -24,7 +24,8 @@ Payment{
 
 
 
--кто где     
+=============================whereAreYou=========================================
+
 \whereAreYou\{userid}
 
 whereAreYou{
@@ -36,14 +37,20 @@ whereAreYou{
 }
 
 
--голосовалка
+==============================Polls============================================
 
 \poll\{poleId}
 
 post(add),get,delete,put(update)
 
+PollType{
+	int Id
+	string TypeName
+}
+
 Poll{
 	int Id;
+	int pollType;
 	string Header;
 	string Question;
 }
@@ -57,12 +64,12 @@ Answer{
 	int PollId;
 	int UserId;
 	string AnswerText;
-	int AnswerNumber;
+	int? AnswerNumber;
 }
 
 
 
--события
+=================================events==========================================
 
 \events\{eventId}
 post(add),get,delete,put(update)
@@ -84,7 +91,7 @@ event{
 
 
 
--новости
+================================news============================================
 
 \news\{newsId}
 post(add),get,delete,put(update)
@@ -97,8 +104,7 @@ news{
 }
 
 
-
--пользователи
+=================================users========================================
 
 \users\{id}
 post(add),get,delete,put(update)
