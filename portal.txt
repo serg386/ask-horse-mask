@@ -1,0 +1,114 @@
+portal
+-сбор денег
+
+\collect\
+\collect\{collectId}\payment\{paymentId}
+
+post(add),get,delete,put(update)
+
+
+Collect{
+	int id;
+	decimal money;
+	string header;
+	string description;
+	datetime dueDate;
+}
+
+Payment{
+	int id;
+	int collectId;
+	decimal money;
+	datetime payDate;
+}
+
+
+
+-кто где     
+\whereAreYou\{userid}
+
+whereAreYou{
+	int userId;
+	string Header;
+	string Content;
+	datetime fromDate
+	datetime toDate;
+}
+
+
+-голосовалка
+
+\poll\{poleId}
+
+post(add),get,delete,put(update)
+
+Poll{
+	int Id;
+	string Header;
+	string Question;
+}
+
+\poll\{poleId}\{answerId}
+
+post(add),get,delete,put(update)
+
+Answer{
+	int Id;
+	int PollId;
+	int UserId;
+	string AnswerText;
+	int AnswerNumber;
+}
+
+
+
+-события
+
+\events\{eventId}
+post(add),get,delete,put(update)
+
+
+\events\{eventid}\{userId}
+post(add),get,delete,put(update)
+
+
+event{
+	
+	int id;
+	string header;
+	string content;
+	datetime date;
+
+}
+
+
+
+
+-новости
+
+\news\{newsId}
+post(add),get,delete,put(update)
+
+news{
+	int id;
+	string header;
+	string content;
+	datetime date;
+}
+
+
+
+-пользователи
+
+\users\{id}
+post(add),get,delete,put(update)
+
+User
+{
+    int id;
+    int roleId;
+	string username;
+	string password;
+	string email;
+
+}
